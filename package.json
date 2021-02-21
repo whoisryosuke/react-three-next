@@ -34,6 +34,7 @@
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/drei": "^3.8.6",
     "@react-three/postprocessing": "^1.5.1",
+    "joymap": "^2.2.4",
     "lerp": "^1.0.3",
     "next": "^10.0.7",
     "postprocessing": "^6.20.3",
