@@ -1,6 +1,6 @@
-import useStore from '@/helpers/store'
-import { Badge } from '@pmndrs/branding'
-import Head from 'next/head'
+import useStore from "@/helpers/store"
+import { Badge } from "@pmndrs/branding"
+import Head from "next/head"
 
 const Header = () => {
   const title = useStore((s) => s.title)
@@ -13,13 +13,16 @@ const Header = () => {
 const Dom = ({ dom }) => {
   const events = useStore((s) => s.events)
   return (
-    <div className='absolute top-0 left-0 right-0 z-20 dom' {...events}>
+    <div style={{ position: `absolute`, top: 0, right: 0, zIndex: 20 }} className='dom' {...events}>
       <Header />
       {dom}
-      <h1 className='absolute w-full text-xs tracking-wider text-center text-white text-gray-100 md:mt-56 mt-28 top-1/2 sm:subpixel-antialiased md:antialiased'>
+      <h1
+        style={{ position: `absolute`, textAlign: `center`, color: `#FAFAFA`, marginTop: `56px` }}
+        className='w-full text-xs tracking-wider sm:subpixel-antialiased md:antialiased'
+      >
         REACT THREE NEXT STARTER
       </h1>
-      <div className='absolute bottom-4 right-4 z-index-30'>
+      <div style={{ position: `absolute`, bottom: `4px`, right: `4px`, zIndex: 30 }}>
         <Badge />
       </div>
     </div>

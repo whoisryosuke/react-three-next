@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from "next/link"
 
 const Go = () => {
   return (
     <Link href='/box' as={`/box`}>
-      <button className='absolute z-20 p-2 m-2 text-white focus:outline-none focus:ring'>
+      <button style={{ position: `absolute`, zIndex: 20, padding: `8px`, margin: `8px`, color: `#FAFAFA` }}>
         Next page
       </button>
     </Link>
