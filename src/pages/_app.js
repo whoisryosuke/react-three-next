@@ -1,18 +1,19 @@
-import { useRouter } from 'next/router'
-import useStore from '@/helpers/store'
-import { useEffect, Children } from 'react'
-import Header from '../config'
-import dynamic from 'next/dynamic'
-import Dom from '@/components/layout/_dom'
-import '@/styles/index.css'
+import { useRouter } from "next/router"
+import useStore from "@/helpers/store"
+import { useEffect, Children } from "react"
+import Header from "../config"
+import dynamic from "next/dynamic"
+import Dom from "@/components/layout/_dom"
+import "@/styles/index.css"
+import ThemeProvider from "@/components/theme/ThemeProvider"
 
 let LCanvas = null
-if (process.env.NODE_ENV === 'production') {
-  LCanvas = dynamic(() => import('@/components/layout/_canvas'), {
+if (process.env.NODE_ENV === `production`) {
+  LCanvas = dynamic(() => import(`@/components/layout/_canvas`), {
     ssr: false,
   })
 } else {
-  LCanvas = require('@/components/layout/_canvas').default
+  LCanvas = require(`@/components/layout/_canvas`).default
 }
 
 function SplitApp({ canvas, dom }) {
@@ -42,10 +43,10 @@ function MyApp({ Component, pageProps }) {
     useStore.setState({ router })
   }, [router])
 
-  return r3fArr.length > 0 ? (
-    <SplitApp canvas={r3fArr} dom={compArr} {...pageProps} />
-  ) : (
-    <Component {...pageProps} />
+  return (
+    <ThemeProvider>
+      {r3fArr.length > 0 ? <SplitApp canvas={r3fArr} dom={compArr} {...pageProps} /> : <Component {...pageProps} />}
+    </ThemeProvider>
   )
 }
 

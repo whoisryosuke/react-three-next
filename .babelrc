@@ -11,6 +11,12 @@
     ]
   ],
   "plugins": [
-    "glsl"
+    "glsl",
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ]
   ]
 }

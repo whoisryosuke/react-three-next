@@ -1,6 +1,23 @@
 import useStore from "@/helpers/store"
 import { Badge } from "@pmndrs/branding"
 import Head from "next/head"
+import styled from "styled-components"
+
+const Container = styled.main({
+  width: `100%`,
+  height: `100%`,
+  position: `absolute`,
+  top: 0,
+  right: 0,
+  zIndex: 20,
+})
+
+const Title = styled.h1({
+  position: `absolute`,
+  textAlign: `center`,
+  color: `#FAFAFA`,
+  marginTop: `56px`,
+})
 
 const Header = () => {
   const title = useStore((s) => s.title)
@@ -13,19 +30,16 @@ const Header = () => {
 const Dom = ({ dom }) => {
   const events = useStore((s) => s.events)
   return (
-    <div style={{ position: `absolute`, top: 0, right: 0, zIndex: 20 }} className='dom' {...events}>
+    <Container className='dom' {...events}>
       <Header />
       {dom}
-      <h1
-        style={{ position: `absolute`, textAlign: `center`, color: `#FAFAFA`, marginTop: `56px` }}
-        className='w-full text-xs tracking-wider sm:subpixel-antialiased md:antialiased'
-      >
+      <Title className='w-full text-xs tracking-wider sm:subpixel-antialiased md:antialiased'>
         REACT THREE NEXT STARTER
-      </h1>
+      </Title>
       <div style={{ position: `absolute`, bottom: `4px`, right: `4px`, zIndex: 30 }}>
         <Badge />
       </div>
-    </div>
+    </Container>
   )
 }
 
