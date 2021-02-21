@@ -2,15 +2,15 @@ import useStore from '@/helpers/store'
 import dynamic from 'next/dynamic'
 import Go from '@/components/dom/go'
 
-const Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
+const Text = dynamic(() => import('@/components/canvas/Text'), {
   ssr: false,
 })
 
 const Page = () => {
-  useStore.setState({ title: 'Sphere' })
+  useStore.setState({ title: 'Text' })
   return (
     <>
-      <Sphere r3f />
+      <Text r3f />
       <Go />
     </>
   )

@@ -1,0 +1,36 @@
+{
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "public/*",
+    ".next/*"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    // "allowJs": true,
+    // "checkJs": true,
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node",
+    "rootDirs": [
+      "src"
+    ],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+  }
+}
