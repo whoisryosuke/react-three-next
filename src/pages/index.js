@@ -5,9 +5,6 @@ import Go from "@/components/dom/go"
 const Text = dynamic(() => import(`@/components/canvas/Text`), {
   ssr: false,
 })
-const GamepadTest = dynamic(() => import(`@/components/dom/GamepadTest`), {
-  ssr: false,
-})
 
 const Page = () => {
   useStore.setState({ title: `Text` })
@@ -15,8 +12,6 @@ const Page = () => {
     <>
       <Text r3f />
       <Go />
-
-      <GamepadTest />
     </>
   )
 }

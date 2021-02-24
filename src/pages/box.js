@@ -1,16 +1,16 @@
-import useStore from '@/helpers/store'
-import dynamic from 'next/dynamic'
-import BackButton from '@/components/dom/back'
+import useStore from "@/helpers/store"
+import dynamic from "next/dynamic"
+import BackButton from "@/components/dom/back"
 
-const Box = dynamic(() => import('@/components/canvas/Box'), {
+const Plane = dynamic(() => import(`@/components/canvas/Plane`), {
   ssr: false,
 })
 
 const Page = () => {
-  useStore.setState({ title: 'Box' })
+  useStore.setState({ title: `Box` })
   return (
     <>
-      <Box r3f />
+      <Plane r3f />
       <BackButton />
     </>
   )
